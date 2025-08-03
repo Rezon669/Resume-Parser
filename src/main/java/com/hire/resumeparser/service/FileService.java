@@ -37,8 +37,6 @@ public class FileService {
     @Value("${aws.bucketName}")
     private String bucketName;
 
-//    @Value("${aws.s3.uploadPath}")
-//    private String uploadPath;
     
     @PostConstruct
     public void initS3Client() {

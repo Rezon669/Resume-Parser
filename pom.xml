@@ -7,26 +7,14 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.5.4</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
 	<groupId>com.hire</groupId>
 	<artifactId>resumeparser</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>resumeparser</name>
 	<description>Springboot application to parse candidates resume</description>
-	<url />
-	<licenses>
-		<license />
-	</licenses>
-	<developers>
-		<developer />
-	</developers>
-	<scm>
-		<connection />
-		<developerConnection />
-		<tag />
-		<url />
-	</scm>
+
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -50,7 +38,7 @@
 		<dependency>
 			<groupId>software.amazon.awssdk</groupId>
 			<artifactId>s3</artifactId>
-			<version>2.25.3</version> <!-- Latest stable version -->
+			<version>2.25.3</version>
 		</dependency>
 
 		<!-- AWS SDK Core -->
