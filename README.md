@@ -103,23 +103,7 @@ The app starts on `http://localhost:8080`.
 
 ---
 
-## ⚠️ Known Limitations / Roadmap
-
-- **Static AWS credentials via `@Value`** — `FileService` builds an explicit `StaticCredentialsProvider` from `application.properties` values. In any real AWS deployment (EC2, ECS, Lambda), prefer the SDK's **default credential provider chain** (IAM role) instead of long-lived access keys checked into config — remove the static-credentials block and just call `S3Client.builder().region(...).build()`.
-- **`application.properties` currently commits empty `aws.accessKey`/`aws.secretKey` keys** — harmless as-is since they're blank, but it signals the intended pattern is env-var injected static keys rather than IAM roles; worth fixing alongside the point above.
-- No authentication on the upload endpoint — anyone who can reach it can upload files to your bucket.
-- No file size limit configured — consider adding `spring.servlet.multipart.max-file-size`/`max-request-size`.
-- No automated tests beyond the default Spring Boot context load test.
-- Planned: IAM-role-based S3 access, upload endpoint auth, file size limits, and a shared "pipeline" doc tying this repo together with Resume-Analyzer.
-
----
-
 ## 🔗 Related
 
 - [Resume-Analyzer](https://github.com/Rezon669/Resume-Analyzer) — the AWS Lambda that's triggered once a file lands in S3, which extracts text (Apache Tika), structures it via OpenAI, and persists candidate/experience records to DynamoDB.
 
----
-
-## 📄 License
-
-MIT
